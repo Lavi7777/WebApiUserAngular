@@ -1,0 +1,8 @@
+<div class="login-container" >
+  <input [(ngModel)]="login.Email"  type="text" placeholder="Email" name="Email"  class="form-control">
+  <input [(ngModel)]="login.Password"  type="text" placeholder="Password" name="Password" class="form-control">
+  <div>
+  <button class="btn btn-primary" (click)="Login($event)">Login</button>
+  <button class="btn btn-primary" (click)="Registration($event)">Registration</button>
+  </div>
+</div>

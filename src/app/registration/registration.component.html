@@ -1,0 +1,15 @@
+<div class="registr-container" >
+
+  <input  name="Name" type="text" placeholder="Name"  class="form-control" [(ngModel)]="user.Name">
+  <input  type="text" placeholder="Email" name="Email"  class="form-control" [(ngModel)]="user.Email">
+  <input  type="text" placeholder="Password" name="Password" type="password" class="form-control" [(ngModel)]="user.Password">
+  <input  type="text" placeholder="Confirm Password" name="ConfirmPassword" type="password" class="form-control" >
+  <input  type="text" placeholder="Phone" name="Phone" class="form-control" [(ngModel)]="user.Phone">
+
+  <div>
+  <button class="btn btn-primary" (click)="Registration($event)">Registration</button>
+  <button class="btn btn-primary" (click)="Login($event)">Login</button>
+  </div>
+
+</div>
+
