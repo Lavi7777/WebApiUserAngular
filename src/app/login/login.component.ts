@@ -11,6 +11,7 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent implements OnInit {
 
   login:Login= new Login();
+  isError:boolean = false;
 
   constructor(
     private router: Router,
@@ -28,10 +29,14 @@ export class LoginComponent implements OnInit {
     .subscribe(
       res =>{
          console.log(res);
+         this.isError=false;
          localStorage.setItem('access_token',res.access_token);
          this.router.navigate(['users']);
       },
-      err =>console.log(err)
+      err =>{
+        console.log(err);
+        this.isError=true;
+      }
     )
 
   }

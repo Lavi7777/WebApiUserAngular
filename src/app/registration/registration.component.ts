@@ -12,9 +12,13 @@ import { AuthService } from '../services/auth.service';
 export class RegistrationComponent implements OnInit {
 
   user:User=new User();
+  submitted = false;
+  mobNumberPattern = "^((\\+380-?)|0)?[0-9]{9}$";
+
   constructor(
     private router: Router,
-    private _auth: AuthService
+    private _auth: AuthService,
+
   ) { }
 
   Registration(event){
@@ -30,8 +34,26 @@ export class RegistrationComponent implements OnInit {
   Login($event){
     this.router.navigate(['login']);
   }
-  ngOnInit(): void {
+
+
+  ngOnInit(): void
+  {
+
   }
 
+  //get f() { return this.registerForm.controls; }
+
+
+  onSubmit() {
+    this.submitted = true;
+
+    console.log(this.user);
+    this._auth.registerUser(this.user)
+    .subscribe(
+      res =>console.log(res),
+      err =>console.log(err)
+    )
+    this.router.navigate(['login']);
+  }
 
 }

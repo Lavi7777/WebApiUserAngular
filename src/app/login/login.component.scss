@@ -6,8 +6,7 @@
    max-width: 600px;
    width: 100%;
    padding: 10px;
-   border-radius: 10px;
-   background-color: lightblue;
+
 
     input{
       margin: 10px 0px 10px 0px;
@@ -15,7 +14,7 @@
 
     div{
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       width: 100%;
     }
 }

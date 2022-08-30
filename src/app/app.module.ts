@@ -11,10 +11,10 @@ import { UsersComponent } from './users/users.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
-import { FormsModule} from '@angular/forms';
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { AuthGuard } from './auth.guard';
 import { TokenInterseptorService } from './services/token-interseptor.service';
-
+import { MustMatchDirective } from './/directives/must-match.directive'
 
 
 @NgModule({
@@ -23,13 +23,15 @@ import { TokenInterseptorService } from './services/token-interseptor.service';
     RegistrationComponent,
     LoginComponent,
     UsersComponent,
-    HomeComponent
+    HomeComponent,
+    MustMatchDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [AuthService,UsersService, AuthGuard,

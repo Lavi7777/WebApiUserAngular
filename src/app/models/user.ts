@@ -5,10 +5,12 @@ export class User {
     this.Name = '';
     this.Email = '';
     this.Phone = '';
+    this.confirmPassword='';
   }
   Id: string | number;
   Password: string;
   Name: string;
   Email: string;
   Phone: string;
+  confirmPassword:string;
 }
