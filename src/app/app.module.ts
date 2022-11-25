@@ -5,16 +5,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { LoginComponent } from './login/login.component';
-import { UsersComponent } from './users/users.component';
-import { HomeComponent } from './home/home.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { LoginComponent } from './components/login/login.component';
+import { UsersComponent } from './components/users/users.component';
+import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { AuthGuard } from './auth.guard';
 import { TokenInterseptorService } from './services/token-interseptor.service';
-import { MustMatchDirective } from './/directives/must-match.directive'
+import { MustMatchDirective } from './/directives/must-match.directive';
+import { UserViewComponent } from './components/user-view/user-view.component'
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { MustMatchDirective } from './/directives/must-match.directive'
     LoginComponent,
     UsersComponent,
     HomeComponent,
-    MustMatchDirective
+    MustMatchDirective,
+    UserViewComponent
   ],
   imports: [
     BrowserModule,

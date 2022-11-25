@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Login } from '../models/login';
-import { AuthService } from '../services/auth.service';
+import { Login } from '../../models/login';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -31,7 +31,13 @@ export class LoginComponent implements OnInit {
          console.log(res);
          this.isError=false;
          localStorage.setItem('access_token',res.access_token);
-         this.router.navigate(['users']);
+         localStorage.setItem('user_id',res.userId)
+         if(res.role==1){
+          this.router.navigate(['users']);
+         }else{
+          this.router.navigate(['user']);
+         }
+
       },
       err =>{
         console.log(err);

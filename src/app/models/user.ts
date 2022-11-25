@@ -1,3 +1,5 @@
+import { ReplaySubject } from 'rxjs';
+
 export class User {
   constructor() {
     this.Id = null;
@@ -5,6 +7,7 @@ export class User {
     this.Name = '';
     this.Email = '';
     this.Phone = '';
+    this.Role=2;
     this.confirmPassword='';
   }
   Id: string | number;
@@ -12,5 +15,8 @@ export class User {
   Name: string;
   Email: string;
   Phone: string;
+  Role:number|string;
   confirmPassword:string;
 }
+
+

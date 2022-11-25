@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../services/users.service';
-import { User } from '../models/user';
+import { UsersService } from '../../services/users.service';
+import { User } from '../../models/user';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-users',
