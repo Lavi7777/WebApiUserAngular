@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
          console.log(res);
          this.isError=false;
          localStorage.setItem('access_token',res.access_token);
-         localStorage.setItem('user_id',res.userId)
+
          if(res.role==1){
           this.router.navigate(['users']);
          }else{

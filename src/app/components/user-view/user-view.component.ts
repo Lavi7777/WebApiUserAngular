@@ -4,6 +4,7 @@ import { User } from '../../models/user';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { AuthService } from '../../services/auth.service';
+import jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-user-view',
@@ -19,9 +20,11 @@ export class UserViewComponent implements OnInit {
     private _usersService:UsersService,
     private _authService:AuthService,
     private _router:Router) {
-      const userId = localStorage.getItem('user_id');
-      console.log(userId)
-
+      //const userId = localStorage.getItem('user_id');
+      const jwtToken = localStorage.getItem('access_token');
+      console.log(jwtToken);
+      const jwtDecode = this.getDecodedAccessToken(jwtToken);
+      const userId=jwtDecode.sub;
       this._usersService.geUser(userId)
       .subscribe(
         res =>{
@@ -40,7 +43,13 @@ export class UserViewComponent implements OnInit {
       )
   }
 
-
+  getDecodedAccessToken(token: string): any {
+    try {
+      return jwt_decode(token);
+    } catch(Error) {
+      return null;
+    }
+  }
 
   ngOnInit(): void {
 
